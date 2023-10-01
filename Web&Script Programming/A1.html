@@ -1,0 +1,186 @@
+<!-- Declares the document type and specifies the HTML version and language -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Provides compatibility with Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Configures the viewport for responsive web design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the title of the webpage -->
+    <title>Ashley's Portfolio</title>
+    <!-- Links an external stylesheet for styling -->
+    <link rel="stylesheet" href="styling.css">
+    <!-- Links an external font stylesheet from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+</head>
+
+<body>
+    <!-- Header section of the webpage -->
+    <div id="header">
+        <div class="container">
+            <!-- Navigation menu -->
+            <nav>
+                <!-- Logo image -->
+                <img src="A1 Pictures/logo.png" class="logo">
+                <!-- Navigation links -->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- Close menu icon with a click event -->
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <!-- Open menu icon with a click event -->
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <!-- Header text with job title and name -->
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Ashley Conejo</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me section -->
+    <!---------About Me -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1 with image -->
+                <div class="about-col-1">
+                    <img src="A1 Pictures/About Me.png">
+                </div>
+                <!-- Column 2 with text and tabs -->
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <!-- Paragraph describing the person -->
+                    <p>I'm Ashley Conejo Molina, an IT networking student originally from Mexico, now based in Scarborough. Armed with basic networking skills, Python programming expertise, and a focus on computer security, I'm navigating the dynamic world of technology. Join me on this exciting journey as I explore networking protocols, design robust infrastructures, and ensure cybersecurity. Let's make our mark in the tech-driven world together! 🌐🔒</p>
+
+                    <!-- Tab titles for different sections -->
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('introductory video')">Introductory Video</p>
+                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <!-- Tab contents for different sections -->
+                    <div class="tab-contents active-tab" id="introductory video">
+                        <!-- Video container with a poster image -->
+                        <div id="video-container">
+                            <video controls poster="A1 Pictures/video poster.png">
+                                <source src="A1 Projects/About Me.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <!-- List of skills with descriptions -->
+                        <ul>
+                            <li><span>Python</span><br>Object Oriented Programming</li>
+                            <li><span>Networking</span><br>Design of Networks using Secure CRT</li>
+                            <li><span>Web Developer</span><br>Creating Web Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <!-- List of educational experiences with dates and locations -->
+                        <ul>
+                            <li><span>2018-2022</span><br>Royal Crown Academic School, Scarborough, ON</li>
+                            <li><span>2022-current</span><br>University of Ontario Institute of Technology, Oshawa, ON</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects section -->
+    <div id="projects">
+        <div class="container">
+            <!-- Column 1 with project list -->
+            <div class="projects-col-1">
+                <h1 class="subtitle">My Projects</h1>
+                <div class="project-list">
+                    <!-- Project 1 item with image, title, and description -->
+                    <div class="project-item">
+                        <a href="A1 Projects/Project 1.pdf" target="_blank">
+                            <img src="A1 Projects/Project 1.PNG" alt="Project 1">
+                        </a>
+                        <h2>Python</h2>
+                        <p>This Python script develops a straightforward BMI (Body Mass Index) calculator, complete with a graphical user interface (GUI) designed with the tkinter library...</p>
+                    </div>
+                    <!-- Project 2 item with image, title, and description -->
+                    <div class="project-item">
+                        <a href="A1 Projects/Project 2.pdf" target="_blank">
+                            <img src="A1 Projects/Project 2.jpeg" alt="Project 2">
+                        </a>
+                        <h2>Raspberry Pi</h2>
+                        <p>Raspberry Pi security system with an LCD display. Users enter a PIN followed by "#." Successful entry displays "Valid Key," triggers two beeps and two green LED flashes...</p>
+                    </div>
+                    <!-- Project 3 item with image, title, and description -->
+                    <div class="project-item">
+                        <a href="A1 Projects/Project 2.pdf" target="_blank">
+                            <img src="A1 Projects/Project 3.png" alt="Project 3">
+                        </a>
+                        <h2>MAC spoofing</h2>
+                        <p>The primary goal of this exercise is to educate participants on how to recognize and effectively respond to security threats that may arise from the manipulation of MAC addresses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Me section -->
+    <!----------Contact Me------->
+    <div id="contact">
+        <div class="container">
+            <h1 class="subtitle">Contact Me</h1>
+            <!-- Contact form with name, reason, email, and submit button -->
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="reason">Reason for Contact:</label>
+                <!-- Dropdown menu for selecting the reason for contact -->
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Select a reason</option>
+                    <option value="question">Question</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <!-- Submit button for the form -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Copyright and contact information -->
+    <div class="copyright">
+        <p>Copyright © 2023, Ashley Conejo Molina. All rights reserved <i class="fas fa-heart"></i> </a></p>
+        <p>Contact: Ashley.conejomolina@ontariotechu.net</p>
+    </div>
+
+</body>
+<!-- JavaScript script for handling tab switching -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+</html>
